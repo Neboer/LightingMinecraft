@@ -52,7 +52,7 @@ module.exports = {
         {
           title: "导言",
           collapsable: false,
-          children: ["", "TermsOfService"],
+          children: ["", "TermsOfService", "Website"],
         },
         {
           title: "帮助",
