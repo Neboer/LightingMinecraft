@@ -1,0 +1,19 @@
+{
+  "name": "LightingMinecraftDoc",
+  "version": "0.0.1",
+  "description": "the document site of lighting minecraft",
+  "main": "index.js",
+  "authors": {
+    "name": "Neboer",
+    "email": ""
+  },
+  "repository": "/LightingMinecraftDoc",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
