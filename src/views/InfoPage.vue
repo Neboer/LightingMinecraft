@@ -31,7 +31,7 @@ import SwordImage from "@/assets/images/ChooseLighting/diamond_sword.webp";
     ></info-item>
     <info-item
       title="活跃的玩家社区"
-      description="我们有来自中国各地甚至世界范围内的玩家，服务器日活可达4-10人，群里的活跃玩家有近20人，在任何时候都可以找到志同道合的小伙伴一起玩耍"
+      description="我们有来自中国各地甚至世界范围内的玩家，群里的活跃玩家有近20人，在任何时候都可以找到志同道合的小伙伴一起玩耍"
       :image="CommunityImage"
     ></info-item>
     <info-item
