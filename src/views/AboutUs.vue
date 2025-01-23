@@ -1,12 +1,12 @@
 <script setup>
-import NeboerAvatar from "@/assets/images/arisa_avatar.jpg";
 import StaffCard from "@/components/StaffCard.vue";
 
-import lockoctAvatar from "@/assets/avatars/lockoct.jpg";
-import groundhogAvatar from "@/assets/avatars/groundhog.jpg";
-import wsbzAvatar from "@/assets/avatars/wsbz.jpg";
-import kruslAvatar from "@/assets/avatars/krusl.jpg";
-import ducksoftAvatar from "@/assets/avatars/ducksoft.jpg";
+const NeboerAvatar = "https://s21.ax1x.com/2025/01/23/pEAoKvF.webp";
+const lockoctAvatar = "https://s21.ax1x.com/2025/01/23/pEATNon.webp";
+const groundhogAvatar = "https://s21.ax1x.com/2025/01/23/pEAT5QO.webp";
+const wsbzAvatar = "https://s21.ax1x.com/2025/01/23/pEATaiq.webp";
+const kruslAvatar = "https://s21.ax1x.com/2025/01/23/pEATdJ0.webp";
+const ducksoftAvatar = "https://s21.ax1x.com/2025/01/23/pEATtds.webp";
 
 const staffs = [
   {
@@ -62,7 +62,7 @@ const staffs = [
 </template>
 <style scoped>
 .background {
-  background-image: url("@/assets/images/background/minecraft-wallpaper-whatspaper-14.webp");
+  background-image: var(--AboutUs-bg);
   background-size: cover;
   background-position: center;
   display: flex;

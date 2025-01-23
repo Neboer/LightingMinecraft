@@ -1,7 +1,6 @@
 <script setup>
-import full_gallery from "@/assets/gallery/gallery.json";
+import full_gallery from "@/components/gallery/gallery.json";
 import GalleryFrame from "@/components/GalleryFrame.vue";
-import { imageBedPrefix } from "@/config.json";
 import Lightgallery from "lightgallery/vue";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
@@ -18,8 +17,8 @@ import lgZoom from "lightgallery/plugins/zoom";
         :key="index"
         :description="image_info.description"
         :title="image_info.title"
-        :full="imageBedPrefix + image_info.full"
-        :thumbnail="imageBedPrefix + image_info.thumbnail"
+        :full="image_info.full"
+        :thumbnail="image_info.thumbnail"
       ></gallery-frame>
     </Lightgallery>
   </div>
@@ -39,7 +38,7 @@ import lgZoom from "lightgallery/plugins/zoom";
 }
 
 .stretch-screen {
-  background-image: url("@/assets/images/background/wood_planks.jpg");
+  background-image: var(--PhotoGallery-bg);
   background-position: center;
   background-repeat: repeat;
   padding-top: 35px;

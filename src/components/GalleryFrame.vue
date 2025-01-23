@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from "vue";
 const props = defineProps(["full", "thumbnail", "title", "description"]);
 </script>
 <template>
@@ -27,7 +26,7 @@ const props = defineProps(["full", "thumbnail", "title", "description"]);
   margin: 10px auto;
   border-style: solid;
   border-width: 20px;
-  border-image: url("@/assets/images/mcmap.png") 44 fill;
+  border-image: var(--PhotoGallery-frame-container) 44 fill;
   align-items: flex-start;
 }
 .image {

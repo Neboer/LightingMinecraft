@@ -15,13 +15,13 @@ import SellerCard from "@/components/SellerCard.vue";
         <seller-card
           title="服务器地址"
           :icon="['fas', 'fa-server']"
-          content="mc.ldgame.xyz"
+          content="ldmc.neboer.site"
           color="black"
         ></seller-card>
         <seller-card
           title="游戏版本"
           :icon="['fas', 'fa-gamepad']"
-          content="1.19.1 Java/基岩"
+          content="1.20.6 Java/基岩"
           color="green"
         ></seller-card>
         <seller-card
@@ -37,7 +37,7 @@ import SellerCard from "@/components/SellerCard.vue";
 
 <style scoped>
 .background {
-  background-image: url("@/assets/images/background/background.webp");
+  background-image: var(--HomePage-bg);
   background-position: center;
   background-size: cover;
   display: flex;

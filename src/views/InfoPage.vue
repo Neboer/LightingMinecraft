@@ -1,12 +1,12 @@
 <script setup>
 import InfoItem from "@/components/InfoItem.vue";
 
-import ServerImage from "@/assets/images/ChooseLighting/huaweicloud.svg";
-import TeamImage from "@/assets/images/ChooseLighting/team.webp";
-import ProtectImage from "@/assets/images/ChooseLighting/houseundershield.webp";
-import CommunityImage from "@/assets/images/ChooseLighting/community.webp";
-import ActivityImage from "@/assets/images/ChooseLighting/activities.webp";
-import SwordImage from "@/assets/images/ChooseLighting/diamond_sword.webp";
+const ServerImage = "https://s21.ax1x.com/2025/01/22/pEAwim4.png";
+const TeamImage = "https://s21.ax1x.com/2025/01/22/pEAwEkR.png";
+const ProtectImage = "https://s21.ax1x.com/2025/01/23/pEAoEEn.png";
+const CommunityImage = "https://s21.ax1x.com/2025/01/23/pEAoZ40.png";
+const ActivityImage = "https://s21.ax1x.com/2025/01/22/pEAwk79.png";
+const SwordImage = "https://s21.ax1x.com/2025/01/22/pEAwF0J.png";
 </script>
 <template>
   <div class="half-screen">
@@ -49,7 +49,7 @@ import SwordImage from "@/assets/images/ChooseLighting/diamond_sword.webp";
 <style scoped>
 .half-screen {
   height: 400px;
-  background-image: url("@/assets/images/background/eveningbackground2.webp");
+  background-image: var(--InfoPage-bg);
   background-position: 20%;
   background-size: cover;
   border: transparent solid 1px; /*A nice trick! */

@@ -160,7 +160,7 @@ li {
 
   .menu-container {
     max-width: v-bind(css_menu_width);
-    overflow: scroll;
+    overflow-y: hidden;
     transition: max-width 0.5s ease-in-out;
   }
 
@@ -172,6 +172,21 @@ li {
 
   #menu li {
     margin-left: 15px;
+  }
+
+  /* 滚动条样式 */
+  ::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
   }
 }
 </style>

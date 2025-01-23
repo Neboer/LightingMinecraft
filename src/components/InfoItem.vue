@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from "vue";
 const props = defineProps(["title", "image", "description"]);
 // 高性能的服务器、热心且高技术力的运营团队、活跃的玩家社区、丰富多彩的活动、最纯粹的多人生存体验
 </script>
