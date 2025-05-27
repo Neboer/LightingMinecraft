@@ -15,13 +15,13 @@ import SellerCard from "@/components/SellerCard.vue";
         <seller-card
           title="服务器地址"
           :icon="['fas', 'fa-server']"
-          content="mc.ldgame.xyz"
+          content="ldmc.neboer.site"
           color="black"
         ></seller-card>
         <seller-card
           title="游戏版本"
           :icon="['fas', 'fa-gamepad']"
-          content="1.19.1 Java/基岩"
+          content="1.20.6 Java"
           color="green"
         ></seller-card>
         <seller-card
