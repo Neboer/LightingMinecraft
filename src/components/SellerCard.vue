@@ -53,7 +53,12 @@ const props = defineProps(["title", "content", "icon", "color"]);
   padding: 8px 8px;
   width: 8em;
   text-align: center;
-  line-height: 100%;
+  white-space: pre-line;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
 }
 
 .icon {
@@ -67,6 +72,11 @@ const props = defineProps(["title", "content", "icon", "color"]);
   .card {
     font-size: large;
     margin: 10px;
+  }
+
+  .content-bar {
+    min-height: 50px;
+    line-height: 1.3;
   }
 }
 </style>

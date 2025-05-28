@@ -13,7 +13,7 @@ import SellerCard from "@/components/SellerCard.vue";
       </div>
       <div class="seller">
         <seller-card
-          title="服务器地址"
+          title="Java版地址"
           :icon="['fas', 'fa-server']"
           content="ldmc.neboer.site"
           color="black"
@@ -21,7 +21,7 @@ import SellerCard from "@/components/SellerCard.vue";
         <seller-card
           title="游戏版本"
           :icon="['fas', 'fa-gamepad']"
-          content="1.20.6 Java"
+          content="Java 1.20.6 原版"
           color="green"
         ></seller-card>
         <seller-card
@@ -30,6 +30,9 @@ import SellerCard from "@/components/SellerCard.vue";
           content="239434096"
           color="deepskyblue"
         ></seller-card>
+      </div>
+      <div class="notice">
+        服务器不强制要求正版登录，内置验证系统，加入服务器后可自由参观，由我们授予您建造权限。本服支持基岩版（PE）玩家和Java版数据互通，请加入QQ交流群获得更多信息。
       </div>
     </div>
   </div>
@@ -69,6 +72,19 @@ import SellerCard from "@/components/SellerCard.vue";
   width: fit-content;
   display: flex;
 }
+
+.notice {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #e74c3c;
+  padding: 12px 20px;
+  border-radius: 15px;
+  margin: 20px auto;
+  width: fit-content;
+  max-width: 80%;
+  text-align: center;
+  font-size: 0.9em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 </style>
 
 <style scoped>
@@ -86,6 +102,12 @@ import SellerCard from "@/components/SellerCard.vue";
 @media (max-width: 960px) {
   .seller {
     flex-direction: column;
+  }
+
+  .notice {
+    font-size: 0.8em;
+    margin: 15px auto;
+    padding: 10px 15px;
   }
 }
 </style>
