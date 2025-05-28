@@ -1,10 +1,10 @@
 # Lighting Minecraft
 
-_灵动 MC_ 的官方网站 2.0 版
+_灵动 MC_ 的官方网站 2.1.2 版
 
-LightingMC 2.0
+LightingMC 2.1.2
 
-https://minecraft.neboer.site
+部署实例： https://minecraft.neboer.site
 
 # 灵动 MC
 
@@ -43,11 +43,12 @@ Vue3，纯前端，静态页面。
 3. 在部署目录下新建根路径`<root-folder>/`，这个是 Web 的根目录。
 4. 将`/dist/`内的全部内容递归拷贝到`<root-folder>/`下。
 5. 新建文件夹`<root-folder>/doc`，将`/docs/src/.vuepress/dist`内全部内容拷贝到`<root-folder>/doc/`下。
-6. 新建文件夹`<root-folder>/img`，将`/src/assets/gallery/`内的两个文件夹`ori`和`thumbnail`拷贝到`<root-folder>/img/`下。
+6. 新建文件夹`<root-folder>/img`，将`/src/assets/images/gallery/`内的两个文件夹`ori`和`thumbnail`拷贝到`<root-folder>/img/`下。
 7. 将静态文件目录`<root-folder>`部署到目标站点。
 
 # 静态资源下载
 src/assets目录下的内容并未提供，但你可以在 https://minecraft.neboer.site 上获取。
 
-# 协议
-本网站基于GNU GPL license v3开源。
+# 协议与版权声明
+
+本网站 https://minecraft.neboer.site 基于GPL-3.0协议开源，其中的内容（文字和图片）以CC-BY协议发布。

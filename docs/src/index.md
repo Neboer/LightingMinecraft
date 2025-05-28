@@ -1,3 +1,8 @@
+---
+title: 欢迎加入灵动MC
+---
+<img src="./imgs/index/lighting_mc_logo.jpg" alt="logo" style="width: 100%">
+
 # 欢迎加入灵动MC大家庭！
 
 你好，我们是灵动MC，一个有爱的公益mc服务器！
