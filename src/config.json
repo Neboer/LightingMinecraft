@@ -1,7 +1,8 @@
 {
-    "imageBedPrefix~":"http://192.168.0.102:12000",
-    "docHomepage~": "http://localhost:8080",
-    "imageBedPrefix":"https://minecraft.neboer.site/img",
-    "docHomepage": "https://minecraft.neboer.site/doc",
+    "imageBedPrefix":"http://localhost:5173/img",
+    "useImageBed": false,
+    "docHomepage": "http://localhost:8080",
+    "imageBedPrefix~":"https://minecraft.neboer.site/img",
+    "docHomepage~": "https://minecraft.neboer.site/doc",
     "notice": "don't forget change doc's nav link back to app and change doc's base url."
 }
