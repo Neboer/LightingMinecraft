@@ -2,8 +2,6 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 
 import App from "./App.vue";
-// import "viewerjs/dist/viewer.css";
-// import VueViewer from "v-viewer";
 import router from "./router";
 
 /* import the fontawesome core */
@@ -21,6 +19,9 @@ import {
   faChevronRight,
   faDownload,
   faBars,
+  faUser,
+  faLock,
+  faLongArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { faQq } from "@fortawesome/free-brands-svg-icons";
 
@@ -32,7 +33,10 @@ library.add(
   faChevronLeft,
   faChevronRight,
   faDownload,
-  faBars
+  faBars,
+  faUser,
+  faLock,
+  faLongArrowRight
 );
 
 const app = createApp(App);

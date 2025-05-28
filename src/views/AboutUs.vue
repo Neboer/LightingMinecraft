@@ -2,11 +2,11 @@
 import NeboerAvatar from "@/assets/images/arisa_avatar.jpg";
 import StaffCard from "@/components/StaffCard.vue";
 
-import lockoctAvatar from "@/assets/avatars/lockoct.jpg";
-import groundhogAvatar from "@/assets/avatars/groundhog.jpg";
-import wsbzAvatar from "@/assets/avatars/wsbz.jpg";
-import kruslAvatar from "@/assets/avatars/krusl.jpg";
-import ducksoftAvatar from "@/assets/avatars/ducksoft.jpg";
+import lockoctAvatar from "@/assets/images/avatars/lockoct.jpg";
+import groundhogAvatar from "@/assets/images/avatars/groundhog.jpg";
+import wsbzAvatar from "@/assets/images/avatars/wsbz.jpg";
+import kruslAvatar from "@/assets/images/avatars/krusl.jpg";
+import ducksoftAvatar from "@/assets/images/avatars/ducksoft.jpg";
 
 const staffs = [
   {

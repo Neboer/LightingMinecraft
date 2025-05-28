@@ -12,6 +12,7 @@ docs/node_modules
 .DS_Store
 dist
 docs/src/.vuepress/dist
+docs2
 dist-ssr
 coverage
 *.local
@@ -30,4 +31,5 @@ coverage
 *.sw?
 temp
 
-src/assets
+#src/assets
+#docs/src/imgs
