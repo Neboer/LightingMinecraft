@@ -1,0 +1,37 @@
+[
+    {
+        "slug": "index",
+        "title": "欢迎加入灵动MC大家庭！",
+        "path": "/src/docs/index.md"
+    },
+    {
+        "slug": "LoginHelp",
+        "title": "如何加入灵动 MC",
+        "path": "/src/docs/LoginHelp.md"
+    },
+    {
+        "slug": "TeleportSystem",
+        "title": "位置及传送系统",
+        "path": "/src/docs/TeleportSystem.md"
+    },
+    {
+        "slug": "FriendSystem",
+        "title": "好友系统",
+        "path": "/src/docs/FriendSystem.md"
+    },
+    {
+        "slug": "TermsOfService",
+        "title": "灵动 mc 用户协议",
+        "path": "/src/docs/TermsOfService.md"
+    },
+    {
+        "slug": "History",
+        "title": "灵动MC的发展历史",
+        "path": "/src/docs/History.md"
+    },
+    {
+        "slug": "Website",
+        "title": "关于本站",
+        "path": "/src/docs/Website.md"
+    }
+]

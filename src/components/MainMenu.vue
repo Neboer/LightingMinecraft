@@ -1,10 +1,13 @@
 <script setup>
 import { useRoute } from "vue-router";
-import { ref, computed } from "vue";
-import { docHomepage } from "@/config.json";
+import { computed, ref } from "vue";
 
 const route = useRoute();
 const folding = ref(false);
+
+const hang_menu_pages = ["home", "info", "gallery", "about"];
+const hang_menu = computed(() => hang_menu_pages.includes(route.name)); // 菜单是否悬挂，如果悬挂，则不占布局空间，文字白色。否则占用布局空间，文字黑色。
+
 const css_transition = computed(() =>
   folding.value ? "rotate(0)" : "rotate(0.25turn)"
 );
@@ -16,7 +19,7 @@ const fold = () => {
 };
 </script>
 <template>
-  <div class="bar">
+  <div class="bar" :class="{ 'bar-hang': hang_menu, 'bar-fix': !hang_menu }">
     <div class="mobile-burger" @click="fold">
       <font-awesome-icon :icon="['fas', 'fa-bars']" />
     </div>
@@ -27,35 +30,40 @@ const fold = () => {
             :to="{ name: 'home' }"
             class="link"
             :class="{ 'link-current': route.name === 'home' }"
-            >主页</router-link
-          >
+            >主页
+          </router-link>
         </li>
         <li style="margin-top: 0">
           <router-link
             :to="{ name: 'info' }"
             class="link"
             :class="{ 'link-current': route.name === 'info' }"
-            >选择灵动</router-link
-          >
+            >选择灵动
+          </router-link>
         </li>
         <li style="margin-top: 0">
           <router-link
             :to="{ name: 'gallery' }"
             class="link"
             :class="{ 'link-current': route.name === 'gallery' }"
-            >摄影画廊</router-link
-          >
+            >摄影画廊
+          </router-link>
         </li>
         <li style="margin-top: 0">
           <router-link
             :to="{ name: 'about' }"
             class="link"
             :class="{ 'link-current': route.name === 'about' }"
-            >关于我们</router-link
-          >
+            >关于我们
+          </router-link>
         </li>
         <li style="margin-top: 0">
-          <a class="link" :href="docHomepage">帮助文档</a>
+          <router-link
+            :to="{ name: 'docs' }"
+            class="link"
+            :class="{ 'link-current': route.name === 'docs' }"
+            >帮助文档
+          </router-link>
         </li>
       </nav>
     </div>
@@ -107,8 +115,15 @@ li {
   margin-left: 20px;
 }
 
-#menu li .link {
+.bar-hang #menu li .link {
   color: white;
+}
+
+.bar-fix #menu li .link {
+  color: black;
+}
+
+#menu li .link {
   cursor: pointer;
   font-size: 1.15em;
   border: none;
@@ -117,13 +132,22 @@ li {
   background: none;
 }
 
-#menu li a:hover {
+.bar-hang #menu li a:hover {
   border-bottom-color: lightgoldenrodyellow;
   color: lightgoldenrodyellow;
 }
 
-#menu li a:hover i {
+.bar-hang #menu li a:hover i {
   background-color: lightgoldenrodyellow;
+}
+
+.bar-fix #menu li a:hover {
+  border-bottom-color: deepskyblue;
+  color: deepskyblue;
+}
+
+.bar-fix .bar-hang #menu li a:hover i {
+  background-color: deepskyblue;
 }
 
 .link {
@@ -132,7 +156,11 @@ li {
   background-repeat: no-repeat;
 }
 
-.bar {
+.bar-fix {
+  margin: 10px;
+}
+
+.bar-hang {
   position: absolute;
   top: 10px;
   left: 10px;
