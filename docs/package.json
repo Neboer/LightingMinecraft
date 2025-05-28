@@ -1,6 +1,6 @@
 {
-  "name": "LightingMinecraftDoc",
-  "version": "0.0.1",
+  "name": "lighting_minecraft_doc",
+  "version": "2.1.2",
   "description": "the document site of lighting minecraft",
   "main": "index.js",
   "authors": {
@@ -12,7 +12,7 @@
     "dev": "vuepress dev src",
     "build": "vuepress build src"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "devDependencies": {
     "vuepress": "^1.5.3"
   }
