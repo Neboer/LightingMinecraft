@@ -39,34 +39,34 @@ onMounted(loadDocument);
   margin: 0 auto;
 }
 
-.markdown-content >>> h1 {
+.markdown-content :deep(h1) {
   border-bottom: 2px solid #eee;
   padding-bottom: 10px;
 }
 
-.markdown-content >>> h2 {
+.markdown-content :deep(h2) {
   margin-top: 30px;
 }
 
-.markdown-content >>> pre {
+.markdown-content :deep(pre) {
   background: #f8f8f8;
   padding: 15px;
   border-radius: 4px;
   overflow: auto;
 }
 
-.markdown-content >>> code {
+.markdown-content :deep(code) {
   background: #f8f8f8;
   padding: 2px 5px;
   border-radius: 3px;
 }
 
-.markdown-content >>> a {
+.markdown-content :deep(a) {
   color: #007bff;
   text-decoration: none;
 }
 
-.markdown-content >>> img {
+.markdown-content :deep(img) {
   max-width: 100%;
   height: auto;
   border-radius: 4px;

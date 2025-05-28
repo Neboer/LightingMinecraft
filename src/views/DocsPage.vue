@@ -1,9 +1,11 @@
 <script setup>
 import { ref } from "vue";
 import docList from "@/docs/docs.json";
+
 const markdownFiles = import.meta.glob("@/docs/*.md", {
   eager: true,
-  as: "raw",
+  query: "?raw",
+  import: "default",
 });
 
 // 控制移动端菜单展开
@@ -135,9 +137,11 @@ a.router-link-exact-active {
   .docs-container {
     flex-direction: column;
   }
+
   .sidebar-toggle {
     display: block;
   }
+
   .sidebar {
     position: fixed;
     left: 0;
@@ -153,14 +157,17 @@ a.router-link-exact-active {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
   }
+
   .sidebar.open {
     transform: translateX(0);
   }
+
   .content {
     flex: none;
     padding: 16px 8px;
     transition: filter 0.2s;
   }
+
   /* 展开菜单时内容虚化/不可交互 */
   .content.sidebar-open {
     filter: blur(2px) grayscale(0.2);
