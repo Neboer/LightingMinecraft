@@ -32,7 +32,8 @@ import SellerCard from "@/components/SellerCard.vue";
         ></seller-card>
       </div>
       <div class="notice">
-        服务器不强制要求正版登录，内置验证系统，加入服务器后可自由参观，由我们授予您建造权限。本服支持基岩版（PE）玩家和Java版数据互通，请加入QQ交流群获得更多信息。
+        服务器不强制要求正版登录，内置验证系统，加入服务器后可自由参观，由我们授予您建造权限。
+        本服支持基岩版（PE）玩家和Java版数据互通，请加入QQ交流群获得更多信息。
       </div>
     </div>
   </div>
@@ -92,6 +93,7 @@ import SellerCard from "@/components/SellerCard.vue";
   .banner-text {
     font-size: 3em;
   }
+
   .seller {
     margin: auto;
     width: fit-content;
