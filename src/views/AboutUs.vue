@@ -72,7 +72,7 @@ const staffs = [
 }
 .card-list {
   display: flex;
-  width: 80%;
+  max-width: 1200px;
   margin: auto;
   flex-wrap: wrap;
   justify-content: center;
