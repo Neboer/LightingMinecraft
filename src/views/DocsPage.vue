@@ -80,10 +80,10 @@ function get_docs_list() {
 .sidebar-toggle {
   display: none;
   position: fixed;
-  top: 16px;
+  bottom: 16px;
   left: 16px;
   z-index: 1101;
-  background: #fff;
+  background: lightgreen;
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 8px 14px;
