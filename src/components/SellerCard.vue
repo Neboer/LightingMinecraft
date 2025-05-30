@@ -26,7 +26,7 @@ const props = defineProps(["title", "content", "icon", "color"]);
   border-radius: 100px;
   background-color: white;
   margin: 10px;
-  font-size: x-large;
+  font-size: large;
   display: flex;
 }
 
@@ -54,11 +54,10 @@ const props = defineProps(["title", "content", "icon", "color"]);
   width: 8em;
   text-align: center;
   white-space: pre-line;
-  line-height: 1.4;
+  line-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
 }
 
 .icon {
@@ -75,8 +74,7 @@ const props = defineProps(["title", "content", "icon", "color"]);
   }
 
   .content-bar {
-    min-height: 50px;
-    line-height: 1.3;
+    line-height: 100%;
   }
 }
 </style>

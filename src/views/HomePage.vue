@@ -1,14 +1,21 @@
 <script setup>
 import SellerCard from "@/components/SellerCard.vue";
+import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
 </script>
 
 <template>
   <div>
-    <div class="background">
+    <div id="background-video-container">
+      <video autoplay muted loop id="background-video">
+        <source :src="MuseumFarVideo" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="main-homepage">
       <div class="banner">
         <div class="banner-text">灵动Minecraft</div>
         <div class="description-text">
-          一个<strong style="color: lightcoral">有爱</strong>的公益MC服务器社区
+          一个<strong style="color: red">有爱</strong>的公益MC服务器社区
         </div>
       </div>
       <div class="seller">
@@ -40,10 +47,24 @@ import SellerCard from "@/components/SellerCard.vue";
 </template>
 
 <style scoped>
-.background {
-  background-image: url("@/assets/images/background/background.webp");
-  background-position: center;
-  background-size: cover;
+#background-video-container {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -10;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+#background-video {
+}
+
+.main-homepage {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -55,14 +76,14 @@ import SellerCard from "@/components/SellerCard.vue";
 }
 
 .banner-text {
-  color: white;
+  color: floralwhite;
   font-size: 5em;
   font-weight: bold;
   text-shadow: 2px 2px black;
 }
 
 .description-text {
-  color: white;
+  color: black;
   font-size: x-large;
   text-align: center;
   margin-top: 60px;
@@ -72,6 +93,8 @@ import SellerCard from "@/components/SellerCard.vue";
   margin: auto;
   width: fit-content;
   display: flex;
+  height: 60px;
+  transform: scale(1.1);
 }
 
 .notice {
@@ -95,6 +118,7 @@ import SellerCard from "@/components/SellerCard.vue";
   }
 
   .seller {
+    transform: none;
     margin: auto;
     width: fit-content;
     display: flex;
