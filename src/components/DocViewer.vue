@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref, watch } from "vue";
 import MarkdownIt from "markdown-it";
+import container from "markdown-it-container";
 
 const props = defineProps({
   docName: String,
@@ -8,6 +9,30 @@ const props = defineProps({
 
 const renderedContent = ref("");
 const md = new MarkdownIt();
+
+// 自定义 info 块
+md.use(container, "info", {
+  render(tokens, idx) {
+    const token = tokens[idx];
+    if (token.nesting === 1) {
+      return `<div class="admonition admonition-info">\n`;
+    } else {
+      return `</div>\n`;
+    }
+  },
+});
+
+// 自定义 warning 块
+md.use(container, "warning", {
+  render(tokens, idx) {
+    const token = tokens[idx];
+    if (token.nesting === 1) {
+      return `<div class="admonition admonition-warning">\n`;
+    } else {
+      return `</div>\n`;
+    }
+  },
+});
 
 // 动态加载文档内容
 const loadDocument = async () => {
@@ -53,6 +78,24 @@ onMounted(loadDocument);
   padding: 15px;
   border-radius: 4px;
   overflow: auto;
+}
+
+.markdown-content :deep(.admonition) {
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 4px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.markdown-content :deep(.admonition-info) {
+  background-color: #f0faff;
+  border-left: 4px solid #2196f3;
+}
+
+.markdown-content :deep(.admonition-warning) {
+  background-color: #fffde7;
+  border-left: 4px solid #ffb300;
 }
 
 .markdown-content :deep(code) {
