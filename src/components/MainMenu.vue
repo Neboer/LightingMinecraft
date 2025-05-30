@@ -6,20 +6,31 @@ const route = useRoute();
 const folding = ref(false);
 
 const hang_menu_pages = ["home", "info", "gallery", "about"];
-const hang_menu = computed(() => hang_menu_pages.includes(route.name)); // 菜单是否悬挂，如果悬挂，则不占布局空间，文字白色。否则占用布局空间，文字黑色。
+const hang_menu = computed(() => hang_menu_pages.includes(route.name)); // 菜单是否悬挂，如果悬挂，则不占布局空间，否则占用布局空间
+
+const light_menu_pages = ["gallery", "info", "about"];
+const light_menu = computed(() => light_menu_pages.includes(route.name)); // 菜单是否浅色显示，
 
 const css_transition = computed(() =>
-  folding.value ? "rotate(0)" : "rotate(0.25turn)"
+  folding.value ? "rotate(0)" : "rotate(0.25turn)",
 );
 const css_menu_width = computed(() =>
-  folding.value ? "0" : "calc(100vw - 42px)"
+  folding.value ? "0" : "calc(100vw - 42px)",
 );
 const fold = () => {
   folding.value = !folding.value;
 };
 </script>
 <template>
-  <div class="bar" :class="{ 'bar-hang': hang_menu, 'bar-fix': !hang_menu }">
+  <div
+    class="bar"
+    :class="{
+      'bar-hang': hang_menu,
+      'bar-fix': !hang_menu,
+      'bar-light': light_menu,
+      'bar-dark': !light_menu,
+    }"
+  >
     <div class="mobile-burger" @click="fold">
       <font-awesome-icon :icon="['fas', 'fa-bars']" />
     </div>
@@ -61,7 +72,7 @@ const fold = () => {
           <router-link
             :to="{ name: 'docs' }"
             class="link"
-            :class="{ 'link-current': route.name === 'docs' }"
+            :class="{ 'link-current': route.name === 'Document' }"
             >帮助文档
           </router-link>
         </li>
@@ -115,11 +126,11 @@ li {
   margin-left: 20px;
 }
 
-.bar-hang #menu li .link {
+.bar-light #menu li .link {
   color: white;
 }
 
-.bar-fix #menu li .link {
+.bar-dark #menu li .link {
   color: black;
 }
 
@@ -132,21 +143,21 @@ li {
   background: none;
 }
 
-.bar-hang #menu li a:hover {
+.bar-light #menu li a:hover {
   border-bottom-color: lightgoldenrodyellow;
   color: lightgoldenrodyellow;
 }
 
-.bar-hang #menu li a:hover i {
+.bar-light #menu li a:hover i {
   background-color: lightgoldenrodyellow;
 }
 
-.bar-fix #menu li a:hover {
+.bar-dark #menu li a:hover {
   border-bottom-color: deepskyblue;
   color: deepskyblue;
 }
 
-.bar-fix .bar-hang #menu li a:hover i {
+.bar-dark .bar-hang #menu li a:hover i {
   background-color: deepskyblue;
 }
 
