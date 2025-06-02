@@ -62,6 +62,9 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
 }
 
 #background-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .main-homepage {
