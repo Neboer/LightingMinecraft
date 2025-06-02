@@ -1,12 +1,12 @@
 <script setup>
 import InfoItem from "@/components/InfoItem.vue";
 
-import ServerImage from "@/assets/images/ChooseLighting/huaweicloud.svg";
-import TeamImage from "@/assets/images/ChooseLighting/team.webp";
-import ProtectImage from "@/assets/images/ChooseLighting/houseundershield.webp";
-import CommunityImage from "@/assets/images/ChooseLighting/community.webp";
-import ActivityImage from "@/assets/images/ChooseLighting/activities.webp";
-import SwordImage from "@/assets/images/ChooseLighting/diamond_sword.webp";
+import ServerImage from "@/assets/images/ChooseLighting/Server.webp";
+import TeamImage from "@/assets/images/ChooseLighting/Team.webp";
+import ProtectImage from "@/assets/images/ChooseLighting/Protect.webp";
+import CommunityImage from "@/assets/images/ChooseLighting/Community.webp";
+import ActivityImage from "@/assets/images/ChooseLighting/Activities.webp";
+import SwordImage from "@/assets/images/ChooseLighting/Sword.webp";
 </script>
 <template>
   <div class="half-screen">
