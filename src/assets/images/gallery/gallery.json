@@ -1,12 +1,12 @@
 [
   {
-    "full": "/ori/2017_summer_holiday.jpg",
+    "full": "/ori/2017_summer_holiday.webp",
     "thumbnail": "/thumbnail/2017_summer_holiday.webp",
     "title": "2017暑假纪念",
     "description": "2017暑假合影纪念"
   },
   {
-    "full": "/ori/2018_winter_holiday.jpg",
+    "full": "/ori/2018_winter_holiday.webp",
     "thumbnail": "/thumbnail/2018_winter_holiday.webp",
     "title": "2018寒假纪念",
     "description": "2018寒假合影"
@@ -114,7 +114,7 @@
     "description": "灵动博物馆的入口，在白天的景色"
   },
   {
-    "full": "/ori/ori_background.jpg",
+    "full": "/ori/ori_background.webp",
     "thumbnail": "/thumbnail/ori_background.webp",
     "title": "三周目首页图",
     "description": "灵动MC上一周目的首页配图"
@@ -126,7 +126,7 @@
     "description": "Krusl和Neboer在这里开启了灵动MC的最新一周目"
   },
   {
-    "full": "/ori/groundhog_old_scene.jpg",
+    "full": "/ori/groundhog_old_scene.webp",
     "thumbnail": "/thumbnail/groundhog_old_scene.webp",
     "title": "灵动一周目风景",
     "description": "Groundhog最喜欢的截图，展示了灵动MC一周目的风景。"
