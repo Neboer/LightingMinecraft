@@ -9,6 +9,7 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
       <video autoplay muted loop id="background-video">
         <source :src="MuseumFarVideo" type="video/mp4" />
       </video>
+      <div class="overlay" />
     </div>
 
     <div class="main-homepage">
@@ -47,6 +48,13 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
 </template>
 
 <style scoped>
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: #0000008f
+}
+
 #background-video-container {
   position: fixed;
   display: flex;
@@ -62,6 +70,7 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
 }
 
 #background-video {
+  position: relative;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -86,7 +95,7 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
 }
 
 .description-text {
-  color: black;
+  color: white;
   font-size: x-large;
   text-align: center;
   margin-top: 60px;
