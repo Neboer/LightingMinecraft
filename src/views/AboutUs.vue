@@ -1,12 +1,12 @@
 <script setup>
-import NeboerAvatar from "@/assets/images/arisa_avatar.jpg";
+import NeboerAvatar from "@/assets/images/arisa_avatar.webp";
 import StaffCard from "@/components/StaffCard.vue";
 
-import lockoctAvatar from "@/assets/images/avatars/lockoct.jpg";
-import groundhogAvatar from "@/assets/images/avatars/groundhog.jpg";
-import wsbzAvatar from "@/assets/images/avatars/wsbz.jpg";
-import kruslAvatar from "@/assets/images/avatars/krusl.jpg";
-import ducksoftAvatar from "@/assets/images/avatars/ducksoft.jpg";
+import lockoctAvatar from "@/assets/images/avatars/lockoct.webp";
+import groundhogAvatar from "@/assets/images/avatars/groundhog.webp";
+import wsbzAvatar from "@/assets/images/avatars/wsbz.webp";
+import kruslAvatar from "@/assets/images/avatars/krusl.webp";
+import ducksoftAvatar from "@/assets/images/avatars/ducksoft.webp";
 
 const staffs = [
   {
