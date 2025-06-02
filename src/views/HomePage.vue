@@ -1,6 +1,19 @@
 <script setup>
+import { ref } from 'vue';
 import SellerCard from "@/components/SellerCard.vue";
 import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
+const copied = ref(false);
+
+function copyToClipboard(content) {
+  navigator.clipboard.writeText(content).then(() => {
+    copied.value = true;
+    setTimeout(() => {
+      copied.value = false;
+    }, 1500);
+  }).catch(err => {
+    console.error("复制失败：", err);
+  });
+}
 </script>
 
 <template>
@@ -25,6 +38,9 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
           :icon="['fas', 'fa-server']"
           content="ldmc.neboer.site"
           color="black"
+          @click="copyToClipboard('ldmc.neboer.site')"
+          class="hover-tip"
+          :data-tooltip="copied ? '复制成功' : '点击复制'"
         ></seller-card>
         <seller-card
           title="游戏版本"
@@ -37,6 +53,9 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
           :icon="['fab', 'fa-qq']"
           content="239434096"
           color="deepskyblue"
+          @click="copyToClipboard('239434096')"
+          class="hover-tip"
+          :data-tooltip="copied ? '复制成功' : '点击复制'"
         ></seller-card>
       </div>
       <div class="notice">
@@ -124,6 +143,32 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
 </style>
 
 <style scoped>
+.hover-tip {
+  cursor: pointer;
+  position: relative;
+}
+
+.hover-tip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.hover-tip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
 @media (max-width: 1368px) {
   .banner-text {
     font-size: 3em;
