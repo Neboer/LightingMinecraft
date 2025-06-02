@@ -5,14 +5,44 @@ import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
 const copied = ref(false);
 
 function copyToClipboard(content) {
-  navigator.clipboard.writeText(content).then(() => {
-    copied.value = true;
-    setTimeout(() => {
-      copied.value = false;
-    }, 1500);
-  }).catch(err => {
-    console.error("复制失败：", err);
-  });
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(content)
+      .then(() => onCopySuccess())
+      .catch(err => {
+        console.error("Clipboard API 复制失败:", err);
+        fallbackCopyTextToClipboard(content);
+      });
+  } else {
+    fallbackCopyTextToClipboard(content);
+  }
+}
+
+function fallbackCopyTextToClipboard(text) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.top = "-999999px";
+  textArea.style.left = "-999999px";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    const successful = document.execCommand('copy');
+    if (successful) onCopySuccess();
+    else console.error("复制失败，请手动复制。");
+  } catch (err) {
+    console.error("execCommand 复制失败:", err);
+  }
+
+  document.body.removeChild(textArea);
+}
+
+function onCopySuccess() {
+  copied.value = true;
+  setTimeout(() => {
+    copied.value = false;
+  }, 1500);
 }
 </script>
 
