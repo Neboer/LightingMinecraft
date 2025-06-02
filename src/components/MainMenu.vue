@@ -8,7 +8,7 @@ const folding = ref(false);
 const hang_menu_pages = ["home", "info", "gallery", "about"];
 const hang_menu = computed(() => hang_menu_pages.includes(route.name)); // 菜单是否悬挂，如果悬挂，则不占布局空间，否则占用布局空间
 
-const light_menu_pages = ["gallery", "info", "about"];
+const light_menu_pages = ["home", "gallery", "info", "about"];
 const light_menu = computed(() => light_menu_pages.includes(route.name)); // 菜单是否浅色显示，
 
 const css_transition = computed(() =>
