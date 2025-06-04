@@ -51,8 +51,12 @@ function get_docs_list() {
   <div class="docs-container">
     <!-- 移动端菜单按钮 -->
     <button class="sidebar-toggle" @click="toggleSidebar" aria-label="切换菜单">
-      <span v-if="!sidebarOpen">&#9776; 菜单</span>
-      <span v-else>&#10005; 关闭</span>
+      <div class="hamburger" :class="{ open: sidebarOpen }">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
+      <span class="btn-text">{{ sidebarOpen ? '关闭' : '菜单' }}</span>
     </button>
 
     <div
@@ -77,6 +81,36 @@ function get_docs_list() {
 </template>
 
 <style scoped>
+.hamburger {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  margin-top: 2px;
+  margin-right: 7px;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .line1 {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.open .line2 {
+  opacity: 0;
+}
+.hamburger.open .line3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 .docs-container {
   display: flex;
   min-height: 100vh;
@@ -94,7 +128,7 @@ function get_docs_list() {
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 8px 14px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
@@ -144,7 +178,8 @@ a.router-link-exact-active {
   }
 
   .sidebar-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 
   .sidebar {
