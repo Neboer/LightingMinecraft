@@ -13,6 +13,11 @@ const sidebarOpen = ref(false);
 
 function toggleSidebar() {
   sidebarOpen.value = !sidebarOpen.value;
+  if (sidebarOpen.value) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
 }
 
 // eslint-disable-next-line no-unused-vars
