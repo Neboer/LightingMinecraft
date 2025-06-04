@@ -1,8 +1,39 @@
 <script setup>
 import { ref } from 'vue';
 import SellerCard from "@/components/SellerCard.vue";
-import MuseumFarVideo from "@/assets/images/background/museum-far-rotate.mp4";
+import Museum4K from "@/assets/images/background/Museum_4K_low.mp4";
+import Museum1080P from "@/assets/images/background/Museum_1080P_low.mp4";
+import MuseumMobile from "@/assets/images/background/Museum_1080P_low_col.mp4";
+import MuseumWebp from "@/assets/images/background/Museum.webp";
+const currentVideo = ref('');
+
 const copied = ref(false);
+import { onMounted, onBeforeUnmount } from 'vue';
+
+onMounted(() => {
+  setVideoBasedOnDevice();
+
+  const handleResize = () => {
+    setVideoBasedOnDevice();
+  };
+
+  window.addEventListener('resize', handleResize);
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', handleResize);
+  });
+});
+
+function setVideoBasedOnDevice() {
+  const width = window.innerWidth;
+
+  if (width >= 3840) {
+    currentVideo.value = Museum4K;
+  } else if (width >= 500) {
+    currentVideo.value = Museum1080P;
+  } else {
+    currentVideo.value = MuseumMobile;
+  }
+}
 
 function copyToClipboard(content) {
   if (navigator.clipboard && window.isSecureContext) {
@@ -49,8 +80,14 @@ function onCopySuccess() {
 <template>
   <div>
     <div id="background-video-container">
-      <video autoplay muted loop id="background-video">
-        <source :src="MuseumFarVideo" type="video/mp4" />
+      <img
+        :src="MuseumWebp"
+        alt="Background Placeholder"
+        class="video-poster"
+        aria-hidden="true"
+      />
+      <video loop disableremoteplayback disablepictureinpicture autoplay playsinline muted id="background-video">
+        <source :src="currentVideo" type="video/mp4" />
       </video>
       <div class="overlay" />
     </div>
@@ -101,7 +138,8 @@ function onCopySuccess() {
   position: absolute;
   height: 100vh;
   width: 100%;
-  background: #0000008f
+  background: #0000008f;
+  z-index: 3;
 }
 
 #background-video-container {
@@ -117,12 +155,22 @@ function onCopySuccess() {
   align-items: center;
   justify-content: center;
 }
-
+.video-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
 #background-video {
   position: relative;
   object-fit: cover;
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 
 .main-homepage {
