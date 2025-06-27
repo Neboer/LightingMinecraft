@@ -22,6 +22,7 @@ import {
   faUser,
   faLock,
   faLongArrowRight,
+  faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faQq } from "@fortawesome/free-brands-svg-icons";
 
@@ -36,7 +37,8 @@ library.add(
   faBars,
   faUser,
   faLock,
-  faLongArrowRight
+  faLongArrowRight,
+  faExclamationCircle
 );
 
 const app = createApp(App);

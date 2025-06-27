@@ -8,6 +8,7 @@ import MuseumWebp from "@/assets/images/background/Museum.webp";
 const currentVideo = ref('');
 
 const copied = ref(false);
+const showNoticeContent = ref(false);
 import { onMounted, onBeforeUnmount } from 'vue';
 
 onMounted(() => {
@@ -126,13 +127,16 @@ function onCopySuccess() {
         ></seller-card>
       </div>
       <div class="notice">
-        <h3 style="margin: 10px 0px -10px 0px;">服务器说明</h3>
-          <ul style="padding: 0px; list-style: none;">
-            <li>✅ 无需正版登录</li>
-            <li>✅ 内置验证系统</li>
-            <li>✅ 可自由参观 建造权限由管理员授予</li>
-            <li>✅ 支持基岩版与 Java 版互通</li>
-          </ul>
+        <h3 @click="showNoticeContent = !showNoticeContent" style="margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <font-awesome-icon :icon="['fas', 'exclamation-circle']" style="margin-right: 8px;" />
+          服务器说明
+        </h3>
+        <ul v-if="showNoticeContent" style="padding: 0px; list-style: none;">
+          <li>✅ 无需正版登录</li>
+          <li>✅ 内置验证系统</li>
+          <li>✅ 可自由参观 建造权限由管理员授予</li>
+          <li>✅ 支持基岩版与 Java 版互通</li>
+        </ul>
       </div>
     </div>
   </div>
