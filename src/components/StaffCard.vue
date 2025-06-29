@@ -2,7 +2,7 @@
 const props = defineProps(["name", "description", "image"]);
 </script>
 <template>
-  <div class="container">
+  <div class="container fluent-ui-blur-light">
     <div class="image-box">
       <img :src="props.image" alt="avatar" class="avatar" />
     </div>
@@ -13,12 +13,15 @@ const props = defineProps(["name", "description", "image"]);
   </div>
 </template>
 <style scoped>
+.fluent-ui-blur-light {
+  background-color: rgba(228, 228, 228, 0.692);
+  backdrop-filter: blur(30px) saturate(120%) ;
+}
 .container {
   display: flex;
   border-radius: 5px;
   width: fit-content;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 70%);
   margin: 2em;
   overflow: hidden;
 }
