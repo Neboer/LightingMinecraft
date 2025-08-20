@@ -127,11 +127,11 @@ function onCopySuccess() {
         ></seller-card>
       </div>
       <div class="notice">
-        <h3 @click="showNoticeContent = !showNoticeContent" style="margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+        <h3 style="margin: 0px; display: flex; align-items: center; justify-content: center;">
           <font-awesome-icon :icon="['fas', 'exclamation-circle']" style="margin-right: 8px;" />
           服务器说明
         </h3>
-        <ul v-if="showNoticeContent" style="padding: 0px; list-style: none;">
+        <ul style="padding: 0px; list-style: none;">
           <li>✅ 无需正版登录</li>
           <li>✅ 内置验证系统</li>
           <li>✅ 可自由参观 建造权限由管理员授予</li>
@@ -277,6 +277,7 @@ function onCopySuccess() {
   .notice {
     font-size: 0.8em;
     padding: 5px 10px;
+    display: none;
   }
 }
 </style>
