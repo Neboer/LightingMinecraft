@@ -113,7 +113,7 @@ function onCopySuccess() {
         <seller-card
           title="游戏版本"
           :icon="['fas', 'fa-gamepad']"
-          content="Java 1.20.6 原版"
+          content="Java 1.21.8 原版"
           color="green"
         ></seller-card>
         <seller-card
