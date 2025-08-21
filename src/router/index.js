@@ -33,12 +33,12 @@ const router = createRouter({
       path: "/docs",
       name: "docs",
       redirect: "/docs/index",
-      component: () => DocsPage,
+      component: DocsPage,
       children: [
         {
           path: ":docName",
           name: "Document",
-          component: () => DocViewer,
+          component: DocViewer,
           props: true,
         },
       ],
