@@ -12,4 +12,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: { include: ["lodash.throttle", "lodash.orderby"] },
+  // build: {
+  //   sourcemap: true, // Set to true to enable, false to disable
+  // },
 });
