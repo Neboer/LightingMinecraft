@@ -25,6 +25,7 @@ jobs:
       with:
         cmd: build
     - name: upload to aliyun oss
+      uses: fangbinwei/aliyun-oss-website-action@v1
       with:
           accessKeyId: ${{ secrets.OSS_ACCESS_KEY_ID }}
           accessKeySecret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
