@@ -1,0 +1,34 @@
+name: Build website and deploy to Aliyun OSS
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 22
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: 'yarn'
+    - name: Run install
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: install --immutable
+    - name: Run install
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: build
+    - name: upload to aliyun oss
+      with:
+          accessKeyId: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          accessKeySecret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          bucket: ${{ secrets.OSS_BUCKET }}
+          endpoint: ${{ secrets.OSS_ENDPOINT }}
+          folder: "dist"
+          skipSetting: true
