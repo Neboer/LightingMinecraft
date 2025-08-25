@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import useClipboard from 'vue-clipboard3'
 import SellerCard from "@/components/SellerCard.vue";
 import Museum4K from "@/assets/images/background/Museum_4K_low.mp4";
 import Museum1080P from "@/assets/images/background/Museum_1080P_low.mp4";
@@ -7,9 +8,8 @@ import MuseumMobile from "@/assets/images/background/Museum_1080P_low_col.mp4";
 import MuseumWebp from "@/assets/images/background/Museum.webp";
 const currentVideo = ref('');
 
+const { toClipboard } = useClipboard()
 const copied = ref(false);
-const showNoticeContent = ref(false);
-import { onMounted, onBeforeUnmount } from 'vue';
 
 onMounted(() => {
   setVideoBasedOnDevice();
@@ -36,45 +36,14 @@ function setVideoBasedOnDevice() {
   }
 }
 
-function copyToClipboard(content) {
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(content)
-      .then(() => onCopySuccess())
-      .catch(err => {
-        console.error("Clipboard API 复制失败:", err);
-        fallbackCopyTextToClipboard(content);
-      });
-  } else {
-    fallbackCopyTextToClipboard(content);
-  }
-}
-
-function fallbackCopyTextToClipboard(text) {
-  const textArea = document.createElement("textarea");
-  textArea.value = text;
-  textArea.style.position = "fixed";
-  textArea.style.top = "-999999px";
-  textArea.style.left = "-999999px";
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
-
+async function copyToClipboard(content) {
   try {
-    const successful = document.execCommand('copy');
-    if (successful) onCopySuccess();
-    else console.error("复制失败，请手动复制。");
-  } catch (err) {
-    console.error("execCommand 复制失败:", err);
+    await toClipboard(content)
+    copied.value = true
+    setTimeout(() => copied.value = false, 1500)
+  } catch (e) {
+    console.error("复制失败:", e)
   }
-
-  document.body.removeChild(textArea);
-}
-
-function onCopySuccess() {
-  copied.value = true;
-  setTimeout(() => {
-    copied.value = false;
-  }, 1500);
 }
 </script>
 
