@@ -7,6 +7,7 @@ import Museum1080P from "@/assets/images/background/Museum_1080P_low.mp4";
 import MuseumMobile from "@/assets/images/background/Museum_1080P_low_col.mp4";
 import MuseumWebp from "@/assets/images/background/Museum.webp";
 const currentVideo = ref('');
+const copiedStatus = ref({})
 
 const { toClipboard } = useClipboard()
 const copied = ref(false);
@@ -36,11 +37,13 @@ function setVideoBasedOnDevice() {
   }
 }
 
-async function copyToClipboard(content) {
+async function copyToClipboard(content, key) {
   try {
     await toClipboard(content)
-    copied.value = true
-    setTimeout(() => copied.value = false, 1500)
+    copiedStatus.value[key] = true
+    setTimeout(() => {
+      copiedStatus.value[key] = false
+    }, 1500)
   } catch (e) {
     console.error("复制失败:", e)
   }
@@ -75,9 +78,9 @@ async function copyToClipboard(content) {
           :icon="['fas', 'fa-server']"
           content="ldmc.neboer.site"
           color="black"
-          @click="copyToClipboard('ldmc.neboer.site')"
+          @click="copyToClipboard('ldmc.neboer.site','server')"
           class="hover-tip"
-          :data-tooltip="copied ? '复制成功' : '点击复制'"
+          :data-tooltip="copiedStatus.server ? '复制成功' : '点击复制'"
         ></seller-card>
         <seller-card
           title="游戏版本"
@@ -90,9 +93,9 @@ async function copyToClipboard(content) {
           :icon="['fab', 'fa-qq']"
           content="239434096"
           color="deepskyblue"
-          @click="copyToClipboard('239434096')"
+          @click="copyToClipboard('239434096','qq')"
           class="hover-tip"
-          :data-tooltip="copied ? '复制成功' : '点击复制'"
+          :data-tooltip="copiedStatus.qq ? '复制成功' : '点击复制'"
         ></seller-card>
       </div>
       <div class="notice">
