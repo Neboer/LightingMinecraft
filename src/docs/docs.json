@@ -15,11 +15,6 @@
         "path": "/src/docs/TeleportSystem.md"
     },
     {
-        "slug": "FriendSystem",
-        "title": "好友系统",
-        "path": "/src/docs/FriendSystem.md"
-    },
-    {
         "slug": "TermsOfService",
         "title": "灵动 mc 用户协议",
         "path": "/src/docs/TermsOfService.md"
