@@ -1,9 +1,9 @@
 {
-    "2017_summer_holiday.jpg": {
+    "2017_summer_holiday.webp": {
         "title": "2017暑假纪念",
         "description": "2017暑假合影纪念"
     },
-    "2018_winter_holiday.jpg": {
+    "2018_winter_holiday.webp": {
         "title": "2018寒假纪念",
         "description": "2018寒假合影"
     },
@@ -75,7 +75,7 @@
         "title": "灵动博物馆",
         "description": "灵动博物馆的入口，在白天的景色"
     },
-    "ori_background.jpg": {
+    "ori_background.webp": {
         "title": "三周目首页图",
         "description": "灵动MC上一周目的首页配图"
     },
@@ -83,7 +83,7 @@
         "title": "四周目发祥地",
         "description": "Krusl和Neboer在这里开启了灵动MC的最新一周目"
     },
-    "groundhog_old_scene.jpg": {
+    "groundhog_old_scene.webp": {
         "title": "灵动一周目风景",
         "description": "Groundhog最喜欢的截图，展示了灵动MC一周目的风景。"
     }
